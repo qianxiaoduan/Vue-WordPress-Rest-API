@@ -1,0 +1,19 @@
+node_modules/
+dist/
+npm-debug.log
+.env.js
+
+# IDE
+/.idea
+
+# OS generated
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+upload.log
+upload.json
+*~
