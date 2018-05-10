@@ -10,8 +10,8 @@
             </el-col>
             <el-col class="article">
                 <ul>
-                    <li v-for="(item,index) in articleData">
-                        <h1 v-html="item.title.rendered" @click="article(index)"></h1>
+                    <li v-for="(item,index) in articleData" @click="article(index)">
+                        <h1 v-html="item.title.rendered"></h1>
                         <div class="abc" v-html="item.excerpt.rendered"></div>
                         <span @click="article(index)">查看详情</span>
                     </li>
@@ -19,8 +19,8 @@
                 </ul>
                 <el-col>
                     <el-pagination v-if="total>0"
-                            layout="prev, pager, next" :page-size="per_page"
-                            :total="total" @current-change="handleCurrentChange">
+                                   layout="prev, pager, next" :page-size="per_page"
+                                   :total="total" @current-change="handleCurrentChange">
                     </el-pagination>
                 </el-col>
             </el-col>
@@ -129,6 +129,7 @@
         margin: 0 auto;
         padding: 0 20px;
         > ul li {
+            cursor: pointer;
             border-bottom: 1px solid #d6d6d6;
             padding: 20px 0;
             p {
