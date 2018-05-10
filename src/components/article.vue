@@ -52,14 +52,8 @@
         h1 {
             font-size: 18px
         }
-        .p {
-            font-size: 14px;
-            border-bottom: 1px solid #d6d6d6;
-            padding-bottom: 15px;
-            padding-top: 15px;
-            span {
-                padding-right: 40px
-            }
+        .p{font-size: 14px;border-bottom: 1px solid #d6d6d6;padding-bottom: 15px;padding-top: 15px;
+            span{padding-right: 40px}
         }
         pre {
             padding: 20px;

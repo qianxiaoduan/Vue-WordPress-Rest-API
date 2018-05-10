@@ -86,7 +86,6 @@
             },
             getcategories(){
                 getCategories().then(res => {
-                    console.log(res);
                     this.categoriesData = res
                 })
             },

@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import ArticleList from '@/components/articleList'
 import Article from '@/components/article'
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
     routes: [
