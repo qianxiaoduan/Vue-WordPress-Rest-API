@@ -97,6 +97,8 @@
                 })
             },
             handleCurrentChange(val) {
+                document.body.scrollTop = 0
+                document.documentElement.scrollTop = 0
                 this.loading = true
                 this.page = val
                 this.getarticlelist()
