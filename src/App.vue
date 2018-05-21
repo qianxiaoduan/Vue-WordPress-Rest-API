@@ -11,8 +11,8 @@
 </script>
 
 <style lang="less">
-    @color: #3ed216;
-    @colorHover: #5eda3d;
+    @color:#409eff;
+    @colorHover:#66b1ff;
     #app {
         font-family: 'Avenir', Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
@@ -58,6 +58,7 @@
             font-size: 38px;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            img{max-height: 60px;display: block}
         }
         .menu {
             ul {
@@ -165,6 +166,8 @@
         line-height: 28px;
         background: #fff;
         padding: 0 20px 20px;
+    }
+    .article,.article-rendered{
         .article-h1 {
             font-size: 18px;
             margin-bottom: 10px;

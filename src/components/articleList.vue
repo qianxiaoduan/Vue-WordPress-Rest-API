@@ -3,7 +3,7 @@
         <div v-show="open==1">
             <div class="header">
                 <div class="container">
-                    <div class="logo" @click="logo">LOGO</div>
+                    <div class="logo"><img src="http://blog.qianxiaoduan.com/wp-content/themes/my/images/logo1.png" alt=""></div>
                     <div class="menu">
                         <ul>
                             <li @click="logo" :class="{ 'active': active == 0 }">全部分类</li>
