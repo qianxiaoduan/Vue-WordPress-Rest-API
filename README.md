@@ -26,5 +26,5 @@ npm run build --report
 ![demo](/src/assets/demo.png)
 
 ## demo地址：
-[demo](http://vue-blog.qiaoxuaidiuan.com/)
+[demo](http://vue-blog.qianxiaoduan.com/)
 
