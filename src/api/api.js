@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-let base = 'http://www.example.com/wp-json/wp/v2';
+let base = 'http://example.com/wp-json/wp/v2';
 
 //获取文章列表
 export const getArticleList = params => {
@@ -13,4 +13,8 @@ export const getArticle = ids => {
 //获取文章分类
 export const getCategories= params => {
     return axios.get(`${base}/categories`, params).then(res => res.data);
+};
+//获取文章作者
+export const getAuthor= ids => {
+    return axios.get(`${base}/users/${ids}`).then(res => res.data);
 };

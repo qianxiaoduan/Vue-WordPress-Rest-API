@@ -1,16 +1,22 @@
 <template>
-    <el-row>
-        <el-col class="article">
-            <h1 v-html="articleData.title.rendered">3</h1>
-            <p class="p"><span>作者：{{articleData.author}}</span><span>发布时间：{{articleData.date}}</span></p>
-            <div v-html="articleData.content.rendered"></div>
-        </el-col>
-    </el-row>
+    <div v-loading.fullscreen.lock="loading">
+        <div v-show="open==1">
+            <div class="container">
+                <el-col class="article">
+                    <span class="return" @click="returnList"><< 返回列表</span>
+                    <h1 class="article-h1" v-html="articleData.title.rendered"></h1>
+                    <p class="p"><span>作者：{{authorName}}</span><span>发布时间：{{articleData.date.replace(/T.*/g,'')}}</span></p>
+                    <div v-html="articleData.content.rendered"></div>
+                </el-col>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
     import {
-        getArticle
+        getArticle,
+        getAuthor
     } from '../api/api';
     export default {
         data () {
@@ -23,8 +29,11 @@
                         rendered: ''
                     },
                     author: '',
-                    date: ''
-                }
+                    date: '',
+                },
+                open: 0,
+                loading: true,
+                authorName:''
             }
         },
         mounted: function () {
@@ -35,7 +44,17 @@
                 let ids = this.$route.params.id
                 getArticle(ids).then(res => {
                     this.articleData = res
-                    console.log(this.articleData)
+                    this.open = 1
+                    this.loading = false
+                    let ids=res.author
+                    getAuthor(ids).then(res => {
+                        this.authorName=res.name
+                    })
+                })
+            },
+            returnList(){
+                this.$router.push({
+                    path: '/'
                 })
             },
 
@@ -43,21 +62,3 @@
     }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="less">
-    .article {
-        max-width: 1170px;
-        margin: 0 auto;
-        padding: 0 20px;
-        h1 {
-            font-size: 18px
-        }
-        .p{font-size: 14px;border-bottom: 1px solid #d6d6d6;padding-bottom: 15px;padding-top: 15px;
-            span{padding-right: 40px}
-        }
-        pre {
-            padding: 20px;
-            background: #f5f5f5
-        }
-    }
-</style>
