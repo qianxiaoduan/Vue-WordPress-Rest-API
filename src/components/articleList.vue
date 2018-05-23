@@ -109,6 +109,8 @@
                 })
             },
             categorie(index){
+                document.body.scrollTop = 0
+                document.documentElement.scrollTop = 0
                 this.loading = true
                 this.categories = this.categoriesData[index].id
                 this.page = 1
@@ -116,6 +118,8 @@
                 this.getarticlelist()
             },
             logo(){
+                document.body.scrollTop = 0
+                document.documentElement.scrollTop = 0
                 let params = {
                     page: this.page,
                     per_page: this.per_page,

@@ -11,8 +11,8 @@
 </script>
 
 <style lang="less">
-    @color:#409eff;
-    @colorHover:#66b1ff;
+    @color: #409eff;
+    @colorHover: #66b1ff;
     #app {
         font-family: 'Avenir', Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
@@ -58,7 +58,10 @@
             font-size: 38px;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            img{max-height: 60px;display: block}
+            img {
+                max-height: 60px;
+                display: block
+            }
         }
         .menu {
             ul {
@@ -123,7 +126,9 @@
                 position: relative;
                 background: #f0f0f0;
                 padding: 20px;
+                transition: all .2s;
                 &:before {
+                    transition: all .2s;
                     content: '';
                     left: 0;
                     bottom: 0;
@@ -131,6 +136,14 @@
                     height: 50px;
                     background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .2));
                     position: absolute
+                }
+            }
+            &:hover {
+                .article-rendered {
+                    background: #f6f6f6;
+                    &:before {
+                        height: 40px;
+                    }
                 }
             }
         }
@@ -167,7 +180,8 @@
         background: #fff;
         padding: 0 20px 20px;
     }
-    .article,.article-rendered{
+
+    .article, .article-rendered {
         .article-h1 {
             font-size: 18px;
             margin-bottom: 10px;
@@ -211,9 +225,14 @@
                 font-size: 14px
             }
         }
-        ul{
-            li{padding: 5px 0}
+        ul {
+            li {
+                padding: 5px 0
+            }
         }
-        img{max-width:100%;display: block}
+        img {
+            max-width: 100%;
+            display: block
+        }
     }
 </style>
