@@ -88,7 +88,10 @@
                     this.total = parseInt(headerData[2])
                     this.open = 1
                     this.loading = false
-                })
+                }).catch(error=> {
+                    this.loading = false
+                    this.$message.error('域名配置错误请检查');
+                });
             },
             article(index){
                 let ids = this.articleData[index].id

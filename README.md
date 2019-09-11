@@ -10,17 +10,15 @@ let base = 'http://example.com/wp-json/wp/v2';
 ## Build Setup
 
 ``` bash
-# install dependencies
+# 安装依赖
 npm install
 
-# serve with hot reload at localhost:8080
-npm run dev
+# 本地启动 localhost:8888
+npm run serve
 
-# build for production with minification
+# 打包
 npm run build
 
-# build for production and view the bundle analyzer report
-npm run build --report
 ```
 ## 图片示例：
 ![demo](/src/assets/demo.png)
